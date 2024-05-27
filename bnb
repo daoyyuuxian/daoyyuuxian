@@ -1,0 +1,12 @@
+// 要查询的 BSC 地址
+const address = '0xYourBscAddress';
+
+// 查询 BSC 上的 BNB 余额
+web3.eth.getBalance(address, (error, result) => {
+    if (error) {
+        console.error('查询 BNB 余额出错:', error);
+    } else {
+        const balanceInBnb = web3.utils.fromWei(result, 'ether'); // BNB 使用以太单位
+        console.log(`地址 ${address} 的 BNB 余额是 ${balanceInBnb} BNB`);
+    }
+});
